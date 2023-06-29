@@ -1,5 +1,11 @@
+* {
+  font-family: "Oswald", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   background-color: hsl(36, 100%, 99%);
+  padding: 60px;
 }
 
 nav {
@@ -35,7 +41,7 @@ nav li {
 }
 
 nav ul li a {
-  color: hsl(236, 13%, 42%);
+  color: hsl(237, 9%, 52%);
   text-decoration: none;
   padding: 7px 13px;
 }
