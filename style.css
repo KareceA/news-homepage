@@ -1,16 +1,16 @@
 * {
-  font-family: "Oswald", sans-serif;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
   background-color: hsl(36, 100%, 99%);
-  padding: 60px;
+  padding: 50px;
 }
 
 nav {
-  height: 50px;
+  height: 70px;
   width: 100%;
+  /* display: inline-flex; */
 }
 
 .logo {
@@ -97,4 +97,68 @@ a:hover {
   #check:checked ~ ul {
     left: 0;
   }
+
+  .item1 {
+    grid-area: image;
+    background-image: url(/assets/images/image-web-3-mobile.jpg);
+  }
+}
+
+/* desktop grid */
+.item1 {
+  grid-area: image;
+  background-image: url(/assets/images/image-web-3-desktop.jpg);
+  width: 57rem;
+  height: 30rem;
+}
+.item2 {
+  grid-area: question;
+  width: 25rem;
+}
+.item3 {
+  grid-area: information;
+  padding: 20px;
+}
+.item4 {
+  grid-area: side;
+  background-color: black;
+  color: white;
+  width: 24rem;
+  padding: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "image image image image side side"
+    "image image image image side side"
+    "question question information information side side";
+  gap: 10px;
+}
+
+.side-heading {
+  color: hsl(35, 77%, 62%);
+  font-size: 40px;
+}
+
+.side-paragraph {
+  color: hsl(233, 8%, 79%);
+}
+
+.question {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.information {
+  color: hsl(237, 9%, 52%);
+  padding-bottom: 40px;
+}
+
+button {
+  background-color: hsl(5, 85%, 63%);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }
