@@ -62,7 +62,7 @@ a:hover {
   }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .checkbtn {
     display: block;
   }
@@ -98,6 +98,16 @@ a:hover {
     left: 0;
   }
 
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "image"
+      "question"
+      "information"
+      "side";
+  }
+
   .item1 {
     grid-area: image;
     background-image: url(/assets/images/image-web-3-mobile.jpg);
@@ -127,12 +137,20 @@ a:hover {
   padding: 30px;
 }
 
-.grid-container {
+.item5 {
+  grid-area: posts;
+  display: flex;
+}
+
+.att .grid-container {
   display: grid;
+  /* grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr; */
   grid-template-areas:
     "image image image image side side"
     "image image image image side side"
-    "question question information information side side";
+    "question question information information side side"
+    "post post post post post post";
   gap: 10px;
 }
 
