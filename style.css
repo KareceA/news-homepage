@@ -51,18 +51,8 @@ a:hover {
   transition: 0.5s;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 952px) {
-  .logo {
-    padding-left: 10px;
-  }
-
-  nav ul li a {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
+/* media query for smaller screen changes navigation to menu bar */
+@media only screen and (max-width: 768px) {
   .checkbtn {
     display: block;
   }
@@ -98,19 +88,70 @@ a:hover {
     left: 0;
   }
 
+  .item1 {
+    grid-area: image;
+    background-image: url(/assets/images/image-web-3-mobile.jpg);
+    background-size: cover;
+    width: 100%;
+  }
+  .item2 {
+    grid-area: question;
+    width: 100%;
+  }
+  .item3 {
+    grid-area: information;
+    width: 100%;
+  }
+  .item4 {
+    grid-area: side;
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 30px;
+  }
+
+  .item5 {
+    grid-area: posts;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-heading {
+    color: hsl(35, 77%, 62%);
+    font-size: 40px;
+  }
+
+  .side-paragraph {
+    color: hsl(233, 8%, 79%);
+  }
+
+  .question {
+    font-size: 50px;
+    font-weight: bolder;
+  }
+
+  .information {
+    color: hsl(237, 9%, 52%);
+    padding-bottom: 40px;
+  }
+
+  button {
+    background-color: hsl(5, 85%, 63%);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
   .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    display: grid;
+    gap: 1rem;
     grid-template-areas:
       "image"
       "question"
       "information"
-      "side";
-  }
-
-  .item1 {
-    grid-area: image;
-    background-image: url(/assets/images/image-web-3-mobile.jpg);
+      "side"
+      "post";
   }
 }
 
@@ -118,34 +159,70 @@ a:hover {
 .item1 {
   grid-area: image;
   background-image: url(/assets/images/image-web-3-desktop.jpg);
-  width: 57rem;
+  background-size: cover;
+  /* width: 57rem; */
+  grid-column: span 4;
   height: 30rem;
 }
 .item2 {
   grid-area: question;
-  width: 25rem;
+  /* width: 25rem; */
+  grid-column: span 2;
 }
 .item3 {
   grid-area: information;
+  grid-column: span 2;
   padding: 20px;
 }
 .item4 {
   grid-area: side;
   background-color: black;
   color: white;
-  width: 24rem;
+  /* width: 24rem; */
+  grid-column: span 2;
   padding: 30px;
 }
 
 .item5 {
   grid-area: posts;
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
 }
 
-.att .grid-container {
+.item5-grid {
   display: grid;
-  /* grid-template-columns: 2fr 1fr;
-  grid-template-rows: 2fr 1fr; */
+  grid-template-areas:
+    "image number"
+    "image number"
+    "image heading"
+    "image paragraph";
+}
+
+.item5 p,
+h2 {
+  color: hsl(237, 9%, 52%);
+}
+
+.item5-grid img {
+  grid-area: image;
+}
+
+.item5-grid h2 {
+  grid-area: number;
+}
+
+.item5-grid h3 {
+  grid-area: heading;
+}
+
+.item5-grid p {
+  grid-area: paragraph;
+}
+
+.grid-container {
+  display: grid;
+  /* grid-template-columns:  2fr 1fr 1fr ;
+  grid-template-rows: 4fr 2fr; */
   grid-template-areas:
     "image image image image side side"
     "image image image image side side"
